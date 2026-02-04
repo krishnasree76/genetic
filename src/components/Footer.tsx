@@ -99,11 +99,24 @@ const Footer = () => {
         </div>
 
         {/* Bottom Bar */}
-        <div className="mt-12 pt-8 border-t border-white/10 text-center">
-          <p className="text-white/50 text-sm">
-            © {new Date().getFullYear()} Genetic Bio Solutions. All rights reserved.
-          </p>
-        </div>
+        <div className="mt-12 pt-8 border-t border-white/10 text-center space-y-2">
+  <p className="text-white/50 text-sm">
+    © {new Date().getFullYear()} Genetic Bio Solutions. All rights reserved.
+  </p>
+
+  <p className="text-white/40 text-sm">
+    Made with <span className="text-red-500">♥</span> by{" "}
+    <a
+      href="https://staffarc.in"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="text-primary hover:text-secondary transition-colors font-medium"
+    >
+      Staffarc
+    </a>
+  </p>
+</div>
+
       </div>
     </footer>
   );
