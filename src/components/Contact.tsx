@@ -32,9 +32,11 @@ const Contact = () => {
   ];
 
   return (
-    <section id="contact" className="py-20 bg-background">
+    <section id="contact" className="py-20 bg-background overflow-hidden">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-12">
+
+        {/* Heading */}
+        <div className="text-center mb-12 animate-fade-in-up">
           <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
             Contact <span className="text-primary">Us</span>
           </h2>
@@ -43,15 +45,17 @@ const Contact = () => {
           </p>
         </div>
 
+        {/* Contact Grid */}
         <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
-          {/* Contact Cards */}
-          {contactInfo.map((info) => (
+          
+          {contactInfo.map((info, index) => (
             <a
               key={info.label}
               href={info.href}
-              className="group bg-card rounded-2xl p-6 shadow-card hover:shadow-purple transition-all duration-300 text-center"
+              className="group bg-card rounded-2xl p-6 shadow-card hover:shadow-elevated transition-all duration-500 hover:-translate-y-2 text-center animate-fade-in-up"
+              style={{ animationDelay: `${index * 0.15}s` }}
             >
-              <div className="w-14 h-14 mx-auto mb-4 rounded-full bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
+              <div className="w-14 h-14 mx-auto mb-4 rounded-full bg-primary/10 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
                 <info.icon className="h-7 w-7 text-primary" />
               </div>
               <h3 className="font-semibold text-foreground mb-2">{info.label}</h3>
@@ -62,8 +66,8 @@ const Contact = () => {
           ))}
 
           {/* Address Card */}
-          <div className="bg-card rounded-2xl p-6 shadow-card text-center md:col-span-1">
-            <div className="w-14 h-14 mx-auto mb-4 rounded-full bg-accent/20 flex items-center justify-center">
+          <div className="bg-card rounded-2xl p-6 shadow-card text-center animate-fade-in-up delay-300">
+            <div className="w-14 h-14 mx-auto mb-4 rounded-full bg-accent/20 flex items-center justify-center animate-float">
               <MapPin className="h-7 w-7 text-accent" />
             </div>
             <h3 className="font-semibold text-foreground mb-2">Address</h3>
@@ -80,31 +84,32 @@ const Contact = () => {
         </div>
 
         {/* Social Media */}
-        <div className="mt-12 text-center">
-  <h3 className="text-lg font-semibold text-foreground mb-6">
-    Follow Us
-  </h3>
+        <div className="mt-12 text-center animate-fade-in-up delay-500">
+          <h3 className="text-lg font-semibold text-foreground mb-6">
+            Follow Us
+          </h3>
 
-  <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6">
-    {socialLinks.map((social) => (
-      <a
-        key={social.label}
-        href={social.href}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="group flex items-center gap-3 bg-card px-6 py-3 rounded-full shadow-soft hover:shadow-card transition-all duration-300 w-full max-w-xs sm:w-auto justify-center"
-      >
-        <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center group-hover:bg-primary group-hover:scale-110 transition-all">
-          <social.icon className="h-5 w-5 text-primary group-hover:text-primary-foreground transition-colors" />
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6">
+            {socialLinks.map((social, index) => (
+              <a
+                key={social.label}
+                href={social.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group flex items-center gap-3 bg-card px-6 py-3 rounded-full shadow-soft hover:shadow-card transition-all duration-500 hover:-translate-y-1 w-full max-w-xs sm:w-auto justify-center animate-fade-in-up"
+                style={{ animationDelay: `${index * 0.15 + 0.6}s` }}
+              >
+                <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center group-hover:bg-primary group-hover:scale-110 transition-all">
+                  <social.icon className="h-5 w-5 text-primary group-hover:text-primary-foreground transition-colors" />
+                </div>
+
+                <span className="text-muted-foreground group-hover:text-foreground transition-colors">
+                  {social.username}
+                </span>
+              </a>
+            ))}
+          </div>
         </div>
-
-        <span className="text-muted-foreground group-hover:text-foreground transition-colors">
-          {social.username}
-        </span>
-      </a>
-    ))}
-  </div>
-</div>
 
       </div>
     </section>
