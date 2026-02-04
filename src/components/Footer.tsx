@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { Phone, Mail, MapPin } from "lucide-react";
+import { motion } from "framer-motion"; // Import motion
 import logo from "@/assets/logo.png";
 
 const Footer = () => {
@@ -15,13 +16,31 @@ const Footer = () => {
     element?.scrollIntoView({ behavior: "smooth" });
   };
 
+  // Animation Variants
+  const columnVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { 
+      opacity: 1, 
+      y: 0, 
+      transition: { duration: 0.6, ease: "easeOut" } 
+    }
+  };
+
   return (
     <footer className="bg-ocean-deep text-white py-16">
       <div className="container mx-auto px-4">
-        <div className="grid md:grid-cols-4 gap-10">
+        <motion.div 
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          variants={{
+            visible: { transition: { staggerChildren: 0.1 } }
+          }}
+          className="grid md:grid-cols-4 gap-10"
+        >
           
           {/* Logo & Tagline */}
-          <div className="md:col-span-2 animate-fade-in-up">
+          <motion.div variants={columnVariants} className="md:col-span-2">
             <div className="flex items-center gap-3 mb-4">
               <img src={logo} alt="Genetic Bio Solutions" className="h-16 w-auto" />
               <div>
@@ -34,10 +53,10 @@ const Footer = () => {
               Pioneering biotechnology solutions for aquatic animal health and
               sustainable aquaculture productivity.
             </p>
-          </div>
+          </motion.div>
 
           {/* Quick Links */}
-          <div className="animate-fade-in-up delay-200">
+          <motion.div variants={columnVariants}>
             <h4 className="font-semibold text-lg mb-4 text-secondary">Quick Links</h4>
             <ul className="space-y-2">
               {quickLinks.map((link) => (
@@ -45,14 +64,14 @@ const Footer = () => {
                   {link.href === "/" ? (
                     <Link
                       to="/"
-                      className="text-white/70 hover:text-secondary transition-colors"
+                      className="text-white/70 hover:text-secondary hover:translate-x-1 inline-block transition-all"
                     >
                       {link.name}
                     </Link>
                   ) : (
                     <button
                       onClick={() => scrollToSection(link.href)}
-                      className="text-white/70 hover:text-secondary transition-colors"
+                      className="text-white/70 hover:text-secondary hover:translate-x-1 inline-block transition-all"
                     >
                       {link.name}
                     </button>
@@ -60,14 +79,14 @@ const Footer = () => {
                 </li>
               ))}
             </ul>
-          </div>
+          </motion.div>
 
           {/* Contact */}
-          <div className="animate-fade-in-up delay-300">
+          <motion.div variants={columnVariants}>
             <h4 className="font-semibold text-lg mb-4 text-secondary">Contact</h4>
             <ul className="space-y-3">
-              <li className="flex items-start gap-3">
-                <Phone className="h-5 w-5 text-secondary flex-shrink-0 mt-0.5" />
+              <li className="flex items-start gap-3 group">
+                <Phone className="h-5 w-5 text-secondary flex-shrink-0 mt-0.5 group-hover:scale-110 transition-transform" />
                 <a
                   href="tel:+918143645716"
                   className="text-white/70 hover:text-secondary transition-colors"
@@ -76,8 +95,8 @@ const Footer = () => {
                 </a>
               </li>
 
-              <li className="flex items-start gap-3">
-                <Mail className="h-5 w-5 text-secondary flex-shrink-0 mt-0.5" />
+              <li className="flex items-start gap-3 group">
+                <Mail className="h-5 w-5 text-secondary flex-shrink-0 mt-0.5 group-hover:scale-110 transition-transform" />
                 <a
                   href="mailto:Geneticbiosolution@gmail.com"
                   className="text-white/70 hover:text-secondary transition-colors text-sm break-all"
@@ -94,17 +113,23 @@ const Footer = () => {
                 </span>
               </li>
             </ul>
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
 
         {/* Bottom Bar */}
-        <div className="mt-12 pt-8 border-t border-white/10 text-center space-y-2 animate-fade-in-up delay-500">
+        <motion.div 
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ delay: 0.5, duration: 1 }}
+          viewport={{ once: true }}
+          className="mt-12 pt-8 border-t border-white/10 text-center space-y-2"
+        >
           <p className="text-white/50 text-sm">
             © {new Date().getFullYear()} Genetic Bio Solutions. All rights reserved.
           </p>
 
           <p className="text-white/40 text-sm">
-            Made with <span className="text-red-500 animate-pulse">♥</span> by{" "}
+            Made with <span className="text-red-500 inline-block animate-pulse">♥</span> by{" "}
             <a
               href="https://staffarc.in"
               target="_blank"
@@ -114,7 +139,7 @@ const Footer = () => {
               Staffarc
             </a>
           </p>
-        </div>
+        </motion.div>
 
       </div>
     </footer>
