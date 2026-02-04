@@ -280,3 +280,33 @@ html, body {
 .animate-float {
   animation: float 3s ease-in-out infinite;
 }
+@keyframes fallIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-60px);
+  }
+  60% {
+    opacity: 1;
+    transform: translateY(10px);
+  }
+  80% {
+    transform: translateY(-4px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.animate-fall-in {
+  animation: fallIn 0.9s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+@keyframes fallIn {
+  0% { opacity: 0; transform: translateY(-60px); }
+  60% { opacity: 1; transform: translateY(10px); }
+  80% { transform: translateY(-4px); }
+  100% { transform: translateY(0); }
+}
+
+.animate-fall-in {
+  animation: fallIn 0.9s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}

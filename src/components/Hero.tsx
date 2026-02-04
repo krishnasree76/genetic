@@ -57,7 +57,7 @@ const Hero = () => {
   };
 
   return (
-    <section className="relative min-h-screen overflow-hidden">
+    <section className="relative h-[100svh] min-h-[600px] overflow-hidden">
       {slides.map((slide, index) => (
         <div
           key={index}
@@ -65,33 +65,33 @@ const Hero = () => {
             index === current ? "opacity-100 z-10" : "opacity-0 z-0"
           }`}
         >
+          {/* Background Image */}
           <div
-            className="absolute inset-0 bg-cover bg-center"
+            className="absolute inset-0 bg-cover bg-center sm:bg-center bg-[position:60%_center]"
             style={{ backgroundImage: `url(${slide.image})` }}
           />
-          <div className="absolute inset-0 bg-black/50" />
 
-          <div className="relative z-10 flex flex-col items-center justify-center min-h-screen text-center px-4">
-            
-            {/* Title */}
+          {/* Gradient Overlay (better readability on mobile) */}
+          <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/50 to-black/70" />
+
+          {/* Content */}
+          <div className="relative z-10 flex flex-col items-center justify-center h-full text-center px-4">
             <h1
-              className="text-4xl md:text-6xl font-bold text-white mb-4 tracking-tight"
+              className="text-3xl sm:text-4xl md:text-6xl font-bold text-white mb-4 tracking-tight"
               style={{ fontFamily: "Poppins, sans-serif" }}
             >
               {slide.title}
             </h1>
 
-            {/* Subtitle */}
             <p
-              className="text-xl md:text-2xl text-secondary mb-4"
+              className="text-lg sm:text-xl md:text-2xl text-secondary mb-4"
               style={{ fontFamily: "Poppins, sans-serif" }}
             >
               {slide.subtitle}
             </p>
 
-            {/* Description */}
             <p
-              className="text-lg md:text-xl text-white/90 max-w-3xl mb-8"
+              className="text-base sm:text-lg md:text-xl text-white/90 max-w-3xl mb-8"
               style={{ fontFamily: "Inter, sans-serif" }}
             >
               {slide.description}
@@ -112,14 +112,14 @@ const Hero = () => {
       {/* Arrows */}
       <button
         onClick={prevSlide}
-        className="absolute left-4 top-1/2 -translate-y-1/2 z-20 bg-white/20 hover:bg-white/40 p-3 rounded-full"
+        className="absolute left-3 sm:left-4 top-1/2 -translate-y-1/2 z-20 bg-white/20 hover:bg-white/40 p-2 sm:p-3 rounded-full backdrop-blur"
       >
         <ChevronLeft className="text-white" />
       </button>
 
       <button
         onClick={nextSlide}
-        className="absolute right-4 top-1/2 -translate-y-1/2 z-20 bg-white/20 hover:bg-white/40 p-3 rounded-full"
+        className="absolute right-3 sm:right-4 top-1/2 -translate-y-1/2 z-20 bg-white/20 hover:bg-white/40 p-2 sm:p-3 rounded-full backdrop-blur"
       >
         <ChevronRight className="text-white" />
       </button>
@@ -130,8 +130,8 @@ const Hero = () => {
           <button
             key={index}
             onClick={() => goToSlide(index)}
-            className={`h-3 w-3 rounded-full ${
-              index === current ? "bg-white" : "bg-white/40"
+            className={`h-2.5 w-2.5 sm:h-3 sm:w-3 rounded-full transition-all ${
+              index === current ? "bg-white scale-110" : "bg-white/40"
             }`}
           />
         ))}
