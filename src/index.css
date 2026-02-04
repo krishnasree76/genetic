@@ -1,0 +1,256 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Genetic Bio Solutions - Scientific Ocean Theme Design System */
+
+@layer base {
+  :root {
+    /* Brand Colors - Purple & Golden Yellow */
+    --background: 200 30% 98%;
+    --foreground: 240 20% 15%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 240 20% 15%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 20% 15%;
+
+    /* Primary - Brand Purple */
+    --primary: 318 45% 45%;
+    --primary-foreground: 0 0% 100%;
+
+    /* Secondary - Golden Yellow */
+    --secondary: 40 90% 55%;
+    --secondary-foreground: 240 20% 15%;
+
+    --muted: 200 20% 94%;
+    --muted-foreground: 200 15% 40%;
+
+    /* Accent - Ocean Teal */
+    --accent: 190 60% 45%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 200 20% 88%;
+    --input: 200 20% 88%;
+    --ring: 318 45% 45%;
+
+    --radius: 0.75rem;
+
+    /* Custom Brand Tokens */
+    --ocean-light: 195 80% 94%;
+    --ocean-medium: 195 70% 70%;
+    --ocean-deep: 200 80% 30%;
+    --gold-light: 45 100% 85%;
+    --gold-dark: 35 80% 45%;
+    --purple-light: 318 50% 92%;
+    --purple-dark: 318 50% 35%;
+
+    /* Gradients */
+    --gradient-ocean: linear-gradient(180deg, hsl(195 80% 94%) 0%, hsl(200 70% 85%) 50%, hsl(200 60% 70%) 100%);
+    --gradient-hero: linear-gradient(135deg, hsl(200 80% 30% / 0.9) 0%, hsl(195 70% 40% / 0.85) 50%, hsl(190 60% 45% / 0.8) 100%);
+    --gradient-card: linear-gradient(180deg, hsl(0 0% 100%) 0%, hsl(200 30% 98%) 100%);
+    --gradient-purple: linear-gradient(135deg, hsl(318 45% 45%) 0%, hsl(318 50% 55%) 100%);
+    --gradient-gold: linear-gradient(135deg, hsl(40 90% 55%) 0%, hsl(35 80% 50%) 100%);
+
+    /* Shadows */
+    --shadow-soft: 0 4px 20px -4px hsl(200 60% 30% / 0.1);
+    --shadow-card: 0 8px 30px -8px hsl(200 60% 30% / 0.15);
+    --shadow-elevated: 0 20px 50px -15px hsl(200 60% 30% / 0.2);
+    --shadow-purple: 0 8px 30px -8px hsl(318 45% 45% / 0.3);
+    --shadow-gold: 0 8px 30px -8px hsl(40 90% 55% / 0.4);
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 220 30% 8%;
+    --foreground: 200 20% 95%;
+
+    --card: 220 25% 12%;
+    --card-foreground: 200 20% 95%;
+
+    --popover: 220 25% 12%;
+    --popover-foreground: 200 20% 95%;
+
+    --primary: 318 50% 55%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 40 85% 50%;
+    --secondary-foreground: 240 20% 10%;
+
+    --muted: 220 20% 18%;
+    --muted-foreground: 200 15% 60%;
+
+    --accent: 190 55% 50%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 220 20% 20%;
+    --input: 220 20% 20%;
+    --ring: 318 50% 55%;
+
+    --ocean-light: 200 40% 20%;
+    --ocean-medium: 200 50% 35%;
+    --ocean-deep: 200 60% 15%;
+
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    @apply font-bold tracking-tight;
+  }
+}
+
+@layer utilities {
+  .text-gradient-purple {
+    @apply bg-clip-text text-transparent;
+    background-image: var(--gradient-purple);
+  }
+
+  .text-gradient-gold {
+    @apply bg-clip-text text-transparent;
+    background-image: var(--gradient-gold);
+  }
+
+  .bg-ocean-gradient {
+    background: var(--gradient-ocean);
+  }
+
+  .bg-hero-overlay {
+    background: var(--gradient-hero);
+  }
+
+  .shadow-soft {
+    box-shadow: var(--shadow-soft);
+  }
+
+  .shadow-card {
+    box-shadow: var(--shadow-card);
+  }
+
+  .shadow-elevated {
+    box-shadow: var(--shadow-elevated);
+  }
+
+  .shadow-purple {
+    box-shadow: var(--shadow-purple);
+  }
+
+  .shadow-gold {
+    box-shadow: var(--shadow-gold);
+  }
+
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .animate-fade-in {
+    animation: fadeIn 0.6s ease-out forwards;
+  }
+
+  .animate-slide-up {
+    animation: slideUp 0.6s ease-out forwards;
+  }
+
+  .animate-scale-in {
+    animation: scaleIn 0.4s ease-out forwards;
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Smooth scroll behavior */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: hsl(var(--muted));
+}
+
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--primary) / 0.5);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--primary) / 0.7);
+}
+html, body {
+  overflow-x: hidden;
+}
