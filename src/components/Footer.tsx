@@ -29,7 +29,7 @@ const Footer = () => {
             <div className="flex items-center gap-3 mb-4">
               <img src={logo} alt="Genetic Bio Solutions" className="h-16 w-auto" />
               <div>
-                <p className="font-bold text-xl text-white">GENETIC</p>
+                <p className="font-bold text-xl text-primary">GENETIC</p>
                 <p className="font-semibold text-secondary">BIO SOLUTIONS</p>
               </div>
             </div>
@@ -91,7 +91,8 @@ const Footer = () => {
               <li className="flex items-start gap-3">
                 <MapPin className="h-5 w-5 text-secondary flex-shrink-0 mt-0.5" />
                 <span className="text-white/70 text-sm">
-                  Hyderabad, Telangana, India
+                  Flat no.3-20/svr/203, Floor No.3, Sri Vamsi Residencey, Road No:2,
+Dundigal, Medchal-Malkajgiri, Hyderabad - 500090, Telangana,India
                 </span>
               </li>
             </ul>
