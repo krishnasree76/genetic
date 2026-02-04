@@ -81,28 +81,31 @@ const Contact = () => {
 
         {/* Social Media */}
         <div className="mt-12 text-center">
-          <h3 className="text-lg font-semibold text-foreground mb-6">
-            Follow Us
-          </h3>
-          <div className="flex justify-center gap-6">
-            {socialLinks.map((social) => (
-              <a
-                key={social.label}
-                href={social.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group flex items-center gap-3 bg-card px-6 py-3 rounded-full shadow-soft hover:shadow-card transition-all duration-300"
-              >
-                <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center group-hover:bg-primary group-hover:scale-110 transition-all">
-                  <social.icon className="h-5 w-5 text-primary group-hover:text-primary-foreground transition-colors" />
-                </div>
-                <span className="text-muted-foreground group-hover:text-foreground transition-colors">
-                  {social.username}
-                </span>
-              </a>
-            ))}
-          </div>
+  <h3 className="text-lg font-semibold text-foreground mb-6">
+    Follow Us
+  </h3>
+
+  <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6">
+    {socialLinks.map((social) => (
+      <a
+        key={social.label}
+        href={social.href}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="group flex items-center gap-3 bg-card px-6 py-3 rounded-full shadow-soft hover:shadow-card transition-all duration-300 w-full max-w-xs sm:w-auto justify-center"
+      >
+        <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center group-hover:bg-primary group-hover:scale-110 transition-all">
+          <social.icon className="h-5 w-5 text-primary group-hover:text-primary-foreground transition-colors" />
         </div>
+
+        <span className="text-muted-foreground group-hover:text-foreground transition-colors">
+          {social.username}
+        </span>
+      </a>
+    ))}
+  </div>
+</div>
+
       </div>
     </section>
   );
