@@ -47,7 +47,7 @@ export const products: Product[] = [
   },
   {
     id: "minpro",
-    name: "MINPRO",
+    name: "G-MINPRO",
     category: "Chelated Minerals with Probiotics",
     shortDescription: "Chelated mineral supplement with beneficial probiotics for aquaculture.",
     composition: "Trace minerals such as Zinc, Manganese, Copper, Iron, Selenium and Chromium. Chelated minerals such as Cobalt, Copper, Iron, Magnesium, Potassium, Sodium, Calcium, Phosphorous. Probiotics such as Bacillus group of strains, Lactic acid group of strains and Vitamins, Amino acids and Enzymes.",

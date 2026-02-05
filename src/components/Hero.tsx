@@ -110,19 +110,20 @@ const Hero = () => {
       ))}
 
       {/* Arrows */}
-      <button
-        onClick={prevSlide}
-        className="absolute left-3 sm:left-4 top-1/2 -translate-y-1/2 z-20 bg-white/20 hover:bg-white/40 p-2 sm:p-3 rounded-full backdrop-blur"
-      >
-        <ChevronLeft className="text-white" />
-      </button>
+      {/* Arrows — Hidden on mobile */}
+<button
+  onClick={prevSlide}
+  className="hidden md:flex absolute left-4 top-1/2 -translate-y-1/2 z-20 bg-white/20 hover:bg-white/40 p-3 rounded-full backdrop-blur transition"
+>
+  <ChevronLeft className="text-white" />
+</button>
 
-      <button
-        onClick={nextSlide}
-        className="absolute right-3 sm:right-4 top-1/2 -translate-y-1/2 z-20 bg-white/20 hover:bg-white/40 p-2 sm:p-3 rounded-full backdrop-blur"
-      >
-        <ChevronRight className="text-white" />
-      </button>
+<button
+  onClick={nextSlide}
+  className="hidden md:flex absolute right-4 top-1/2 -translate-y-1/2 z-20 bg-white/20 hover:bg-white/40 p-3 rounded-full backdrop-blur transition"
+>
+  <ChevronRight className="text-white" />
+</button>
 
       {/* Dots */}
       <div className="absolute bottom-6 w-full flex justify-center gap-3 z-20">
