@@ -13,9 +13,9 @@ const WhatsAppFloat = () => {
       </div>
 
       {/* Tooltip */}
-      <span className="absolute right-16 bottom-3 bg-black text-white text-xs px-3 py-1 rounded opacity-0 group-hover:opacity-100 transition whitespace-nowrap">
+      {/* <span className="absolute right-16 bottom-3 bg-black text-white text-xs px-3 py-1 rounded opacity-0 group-hover:opacity-100 transition whitespace-nowrap">
         Chat with us
-      </span>
+      </span> */}
     </a>
   );
 };
