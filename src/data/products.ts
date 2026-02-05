@@ -23,7 +23,7 @@ import p9 from "@/assets/p9.png";
 import p10 from "@/assets/p10.png";
 import p11 from "@/assets/p11.png";
 import p12 from "@/assets/p12.png";
-import p13 from "@/assets/p13.png";
+import p13 from "@/assets/Gemini_Generated_Image_6gdw7f6gdw7f6gdw.png";
 import p14 from "@/assets/p14.png";
 
 export const products: Product[] = [

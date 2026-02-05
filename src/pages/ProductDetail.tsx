@@ -43,22 +43,28 @@ const ProductDetail = () => {
             </Button>
           </HashLink>
 
-          <div className="grid lg:grid-cols-2 gap-12 animate-fade-in">
-            {/* Product Image */}
-            <div className="relative">
-              <div className="bg-card rounded-2xl overflow-hidden shadow-elevated border border-muted">
-                <img
-                  src={product.image}
-                  alt={product.name}
-                  className="w-full aspect-square object-contain p-8"
-                />
-              </div>
-              <div className="absolute top-6 left-6">
-                <span className="px-4 py-2 bg-primary text-primary-foreground font-medium rounded-full shadow-lg">
-                  {product.category}
-                </span>
-              </div>
-            </div>
+  {/* Product Image */}
+  <div className="grid lg:grid-cols-2 gap-12 animate-fade-in">
+  <div className="relative">
+    <div className="bg-card rounded-2xl overflow-hidden shadow-elevated border border-muted">
+      <img
+        src={product.image}
+        alt={product.name}
+        className="w-full aspect-square object-cover scale-110"
+      />
+    </div>
+
+    <div className="absolute top-6 left-6">
+      <span className="px-4 py-2 bg-primary text-primary-foreground font-medium rounded-full shadow-lg">
+        {product.category}
+      </span>
+    </div>
+  </div>
+
+
+
+
+
 
             {/* Product Info */}
             <div>
