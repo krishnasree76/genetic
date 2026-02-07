@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import hero1 from "@/assets/hero-bg.jpg";
 import hero2 from "@/assets/hero-2.jpg";
 import hero3 from "@/assets/hero-3.jpg";
+import logo from "@/assets/logo.png";
 
 const slides = [
   {
@@ -65,35 +66,37 @@ const Hero = () => {
             index === current ? "opacity-100 z-10" : "opacity-0 z-0"
           }`}
         >
-          {/* Background Image */}
+          {/* Background */}
           <div
-            className="absolute inset-0 bg-cover bg-center sm:bg-center bg-[position:60%_center]"
+            className="absolute inset-0 bg-cover bg-center bg-[position:60%_center]"
             style={{ backgroundImage: `url(${slide.image})` }}
           />
 
-          {/* Gradient Overlay (better readability on mobile) */}
+          {/* Overlay */}
           <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/50 to-black/70" />
 
           {/* Content */}
-          <div className="relative z-10 flex flex-col items-center justify-center h-full text-center px-4">
-            <h1
-              className="text-3xl sm:text-4xl md:text-6xl font-bold text-white mb-4 tracking-tight"
-              style={{ fontFamily: "Poppins, sans-serif" }}
-            >
+          <div className="relative z-10 flex flex-col items-center justify-center h-full text-center px-4 pt-32 sm:pt-36">
+
+            {/* Logo */}
+            <img
+              src={logo}
+              alt="Genetic Bio Solutions"
+              className="h-14 sm:h-16 md:h-18 w-auto mb-6 drop-shadow-xl animate-fade-in"
+            />
+
+            {/* Title */}
+            <h1 className="text-3xl sm:text-4xl md:text-6xl font-bold text-white mb-4 tracking-tight">
               {slide.title}
             </h1>
 
-            <p
-              className="text-lg sm:text-xl md:text-2xl text-secondary mb-4"
-              style={{ fontFamily: "Poppins, sans-serif" }}
-            >
+            {/* Subtitle */}
+            <p className="text-lg sm:text-xl md:text-2xl text-secondary mb-4">
               {slide.subtitle}
             </p>
 
-            <p
-              className="text-base sm:text-lg md:text-xl text-white/90 max-w-3xl mb-8"
-              style={{ fontFamily: "Inter, sans-serif" }}
-            >
+            {/* Description */}
+            <p className="text-base sm:text-lg md:text-xl text-white/90 max-w-3xl mb-8">
               {slide.description}
             </p>
 
@@ -109,21 +112,20 @@ const Hero = () => {
         </div>
       ))}
 
-      {/* Arrows */}
-      {/* Arrows — Hidden on mobile */}
-<button
-  onClick={prevSlide}
-  className="hidden md:flex absolute left-4 top-1/2 -translate-y-1/2 z-20 bg-white/20 hover:bg-white/40 p-3 rounded-full backdrop-blur transition"
->
-  <ChevronLeft className="text-white" />
-</button>
+      {/* Arrows (desktop only) */}
+      <button
+        onClick={prevSlide}
+        className="hidden md:flex absolute left-4 top-1/2 -translate-y-1/2 z-20 bg-white/20 hover:bg-white/40 p-3 rounded-full backdrop-blur transition"
+      >
+        <ChevronLeft className="text-white" />
+      </button>
 
-<button
-  onClick={nextSlide}
-  className="hidden md:flex absolute right-4 top-1/2 -translate-y-1/2 z-20 bg-white/20 hover:bg-white/40 p-3 rounded-full backdrop-blur transition"
->
-  <ChevronRight className="text-white" />
-</button>
+      <button
+        onClick={nextSlide}
+        className="hidden md:flex absolute right-4 top-1/2 -translate-y-1/2 z-20 bg-white/20 hover:bg-white/40 p-3 rounded-full backdrop-blur transition"
+      >
+        <ChevronRight className="text-white" />
+      </button>
 
       {/* Dots */}
       <div className="absolute bottom-6 w-full flex justify-center gap-3 z-20">
