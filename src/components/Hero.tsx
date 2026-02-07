@@ -80,10 +80,12 @@ const Hero = () => {
 
             {/* Logo */}
             <img
-              src={logo}
-              alt="Genetic Bio Solutions"
-              className="h-14 sm:h-16 md:h-18 w-auto mb-6 drop-shadow-xl animate-fade-in"
-            />
+  src={logo}
+  alt="Genetic Bio Solutions"
+  className="h-28 sm:h-32 md:h-40 lg:h-44 w-auto mb-8 animate-fade-in drop-shadow-[0_0_40px_rgba(255,255,255,0.45)]"
+/>
+
+
 
             {/* Title */}
             <h1 className="text-3xl sm:text-4xl md:text-6xl font-bold text-white mb-4 tracking-tight">
